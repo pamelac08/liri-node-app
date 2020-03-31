@@ -1,0 +1,106 @@
+
+
+command line: do-what-it-says
+Response: 
+    Artist(s) Name: Backstreet Boys
+    Song Name: I Want It That Way
+    Spotify Preview Link: https://p.scdn.co/mp3-preview/e72a05dc3f69c891e3390c3ceaa77fad02f6b5f6?cid=e5d66c9beafc4a73b732629eed34e211
+    From Album: The Hits--Chapter One
+Response: 
+    Movie Title: Mr. Nobody
+    Year Released: 2009
+    IMDB Rating: 7.8
+    Rotten Tomatoes Rating: 67%
+    Country where Produced: Belgium, Germany, Canada, France, UK, Luxembourg
+    Language: English, Mohawk
+    Movie Plot: A boy stands on a station platform as a train is about to leave. Should he go with his mother or stay with his father? Infinite possibilities arise from this decision. As long as he doesn't choose, anything is possible.
+    Actors: Jared Leto, Sarah Polley, Diane Kruger, Linh Dan Pham
+
+command line: movie-this,forrest gump
+Response: 
+    Movie Title: Forrest Gump
+    Year Released: 1994
+    IMDB Rating: 8.8
+    Rotten Tomatoes Rating: 70%
+    Country where Produced: USA
+    Language: English
+    Movie Plot: The presidencies of Kennedy and Johnson, the events of Vietnam, Watergate, and other historical events unfold through the perspective of an Alabama man with an IQ of 75, whose only desire is to be reunited with his childhood sweetheart.
+    Actors: Tom Hanks, Rebecca Williams, Sally Field, Michael Conner Humphreys
+Response: 
+    Artist(s) Name: Ace of Base
+    Song Name: The Sign
+    Spotify Preview Link: https://p.scdn.co/mp3-preview/4c463359f67dd3546db7294d236dd0ae991882ff?cid=e5d66c9beafc4a73b732629eed34e211
+    From Album: The Sign
+
+command line: spotify-this-song,this is me
+Response: 
+    Artist(s) Name: Keala Settle
+    Song Name: This Is Me
+    Spotify Preview Link: https://p.scdn.co/mp3-preview/4e3a8d43df85b32a1d056f2c3e6c745d6da46359?cid=e5d66c9beafc4a73b732629eed34e211
+    From Album: The Greatest Showman (Original Motion Picture Soundtrack)
+
+command line: concert-this,the who
+Response: 
+    Venue Name: The Guitar Hotel at Seminole Hard Rock
+    Venue Location: Hollywood
+    Event Date: 04/21/2020
+Response: 
+    Venue Name: BB&T Arena
+    Venue Location: Highland Heights
+    Event Date: 04/23/2020
+Response: 
+    Venue Name: American Airlines Center
+    Venue Location: Dallas
+    Event Date: 04/27/2020
+Response: 
+    Venue Name: Toyota Center
+    Venue Location: Houston
+    Event Date: 04/30/2020
+Response: 
+    Venue Name: Pepsi Center
+    Venue Location: Denver
+    Event Date: 05/02/2020
+Response: 
+    Venue Name: Pepsi Center
+    Venue Location: Denver
+    Event Date: 09/29/2020
+Response: 
+    Venue Name: 3Arena
+    Venue Location: Dublin
+    Event Date: 12/24/2020
+Response: 
+    Venue Name: 3Arena
+    Venue Location: Dublin
+    Event Date: 03/05/2021
+Response: 
+    Venue Name: M&S Bank Arena Liverpool
+    Venue Location: Liverpool
+    Event Date: 03/08/2021
+Response: 
+    Venue Name: SSE Hydro
+    Venue Location: Glasgow
+    Event Date: 03/10/2021
+Response: 
+    Venue Name: First Direct Arena
+    Venue Location: Leeds
+    Event Date: 03/15/2021
+Response: 
+    Venue Name: The SSE Arena, Wembley
+    Venue Location: London
+    Event Date: 03/22/2021
+Response: 
+    Venue Name: Motorpoint Arena Nottingham
+    Venue Location: Nottingham
+    Event Date: 03/24/2021
+Response: 
+    Venue Name: Motorpoint Arena Cardiff
+    Venue Location: Cardiff
+    Event Date: 03/27/2021
+Response: 
+    Venue Name: Resorts World Arena
+    Venue Location: Birmingham
+    Event Date: 03/17/2021
+Response: 
+    Venue Name: Manchester Arena
+    Venue Location: Manchester
+    Event Date: 03/29/2021
