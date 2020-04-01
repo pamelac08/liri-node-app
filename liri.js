@@ -14,7 +14,6 @@ var keys = require("./keys.js");
 // able to access your keys information like so
 var spotify = new Spotify(keys.spotify);
 
-
 // first prompt question lets the user selects one of four commands
 inquirer
   .prompt([
@@ -29,10 +28,9 @@ inquirer
         "do-what-it-says"
       ]
     }
-  ]) 
+  ])
   .then(function(answer) {
     var command = answer.command;
-    // console.log(command);
     var fullCommand = [];
 
     if (command) {
@@ -50,36 +48,28 @@ inquirer
           }
         ])
         .then(function(answer) {
-          // console.log(answer);
-
           userInput = answer.userInput;
 
           if (userInput) {
-          fullCommand.push(userInput);
+            fullCommand.push(userInput);
+            log("\n" + "\ncommand line: " + fullCommand);
 
-          console.log(fullCommand);
-          log("\n" + "\ncommand line: " + fullCommand);
+            userInputArray = userInput.split(" ");
+            userInput = userInputArray.join("+");
 
-          userInputArray = userInput.split(" ");
-          userInput = userInputArray.join("+");
-
-          console.log(userInput);
-          
-
-
-          if (command === "spotify-this-song") {
-            spotiFy(userInput);
+            if (command === "spotify-this-song") {
+              spotiFy(userInput);
+            }
+            if (command === "movie-this") {
+              movie(userInput);
+            }
+            if (command === "concert-this") {
+              bandsInTown(userInput);
+            }
           }
-          if (command === "movie-this") {
-            movie(userInput);
-          }
-          if (command === "concert-this") {
-            bandsInTown(userInput);
-          }
-        }
 
-        if (command === "concert-this" && !userInput) {
-            console.log("please enter a name to search!");
+          if (command === "concert-this" && !userInput) {
+            console.log("Please enter a band/artist to search!");
           }
           if (command === "spotify-this-song" && !userInput) {
             spotiFy(userInput);
@@ -87,14 +77,10 @@ inquirer
           if (command === "movie-this" && !userInput) {
             movie(userInput);
           }
-        
-            
-          
         });
     }
 
     if (command === "do-what-it-says") {
-      console.log(fullCommand);
       log("\n" + "\ncommand line: " + fullCommand);
 
       random();
@@ -105,19 +91,15 @@ function log(text) {
   fs.appendFile("log.txt", text, function(err) {
     if (err) {
       console.log(err);
-    } else {
-      //   console.log("Content Added!");
     }
   });
 }
 
-function bandsInTown(x) {
-  // console.log(command);
-  // console.log(x);
+function bandsInTown(artistName) {
   axios
     .get(
       "https://rest.bandsintown.com/artists/" +
-        x +
+        artistName +
         "/events?app_id=codingbootcamp"
     )
     .then(function(response) {
@@ -125,17 +107,12 @@ function bandsInTown(x) {
     })
     .catch(function(error) {
       if (error.response) {
-        // The request was made and the server responded with a status code
-        // that falls out of the range of 2xx
         console.log(error.response.data);
         console.log(error.response.status);
         console.log(error.response.headers);
       } else if (error.request) {
-        // The request was made but no response was received
-        // `error.request` is an object that comes back with details pertaining to the error that occurred.
         console.log(error.request);
       } else {
-        // Something happened in setting up the request that triggered an Error
         console.log("Error", error.message);
       }
       console.log(error.config);
@@ -143,10 +120,7 @@ function bandsInTown(x) {
 }
 
 function bandsInTownResponse(y) {
-  var data = y.data;
-  //   console.log(data);
-
-  for (let index = 0; index < data.length; index++) {
+  for (let index = 0; index < y.data.length; index++) {
     var venueName = y.data[index].venue.name;
     var venueCity = y.data[index].venue.city;
     var eventDateUnformatted = y.data[index].datetime;
@@ -172,16 +146,12 @@ function bandsInTownResponse(y) {
   }
 }
 
-function spotiFy(x) {
-  // console.log(command);
-  // console.log(x);
-  if (x) {
-    spotify.search({ type: "track", query: x }, function(err, data) {
+function spotiFy(song) {
+  if (song) {
+    spotify.search({ type: "track", query: song }, function(err, data) {
       if (err) {
         return console.log("Error occurred: " + err);
       }
-
-      //   console.log(data.tracks.items[0]);
       spotiFyResponse(data);
     });
   } else {
@@ -189,13 +159,11 @@ function spotiFy(x) {
       if (err) {
         return console.log("Error occurred: " + err);
       }
-
-      //   console.log(data.tracks.items[0]);
-
       spotiFyResponse(data);
     });
   }
 }
+
 function spotiFyResponse(y) {
   var artistName = y.tracks.items[0].artists[0].name;
   var songName = y.tracks.items[0].name;
@@ -220,28 +188,25 @@ function spotiFyResponse(y) {
   );
 }
 
-function movie(x) {
-  // console.log(command);
-  // console.log(x);
-  if (x) {
+function movie(movieInput) {
+  if (movieInput) {
     axios
-      .get("http://www.omdbapi.com/?t=" + x + "&y=&plot=short&apikey=trilogy")
+      .get(
+        "http://www.omdbapi.com/?t=" +
+          movieInput +
+          "&y=&plot=short&apikey=trilogy"
+      )
       .then(function(response) {
         movieResponse(response);
       })
       .catch(function(error) {
         if (error.response) {
-          // The request was made and the server responded with a status code
-          // that falls out of the range of 2xx
           console.log(error.response.data);
           console.log(error.response.status);
           console.log(error.response.headers);
         } else if (error.request) {
-          // The request was made but no response was received
-          // `error.request` is an object that comes back with details pertaining to the error that occurred.
           console.log(error.request);
         } else {
-          // Something happened in setting up the request that triggered an Error
           console.log("Error", error.message);
         }
         console.log(error.config);
@@ -254,23 +219,16 @@ function movie(x) {
           "&y=&plot=short&apikey=trilogy"
       )
       .then(function(response) {
-        // console.log(response.data);
-
         movieResponse(response);
       })
       .catch(function(error) {
         if (error.response) {
-          // The request was made and the server responded with a status code
-          // that falls out of the range of 2xx
           console.log(error.response.data);
           console.log(error.response.status);
           console.log(error.response.headers);
         } else if (error.request) {
-          // The request was made but no response was received
-          // `error.request` is an object that comes back with details pertaining to the error that occurred.
           console.log(error.request);
         } else {
-          // Something happened in setting up the request that triggered an Error
           console.log("Error", error.message);
         }
         console.log(error.config);
@@ -321,26 +279,14 @@ function movieResponse(y) {
 }
 
 function random() {
-  // console.log(command);
-
   fs.readFile("random.txt", "utf8", function(error, data) {
     if (error) {
       return console.log(error);
     }
-    // We will then print the contents of data
-    // console.log(data);
-
-    // Then split it by commas (to make it more readable)
     var dataArr = data.split(",");
-
-    // We will then re-display the content as an array for later use.
-    console.log(dataArr);
 
     var command1 = dataArr[0];
     var title = dataArr[1];
-
-    console.log(command1);
-    console.log(title);
 
     if (command1 === "concert-this") {
       bandsInTown(title);
