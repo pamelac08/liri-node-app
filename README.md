@@ -69,10 +69,10 @@ LIRI is a Language Interpretation and Recognition Interface that searches Spotif
 ###  Screenshots/video
 
 Code (lines 1-40)
-![code1](./images/screenshot_code1-40)
+![code1](images/screenshot_code1-40)
 
 Code (lines 40-80)
-![code2](./images/screenshot_code40-80)
+![code2](images/screenshot_code40-80)
 
 Code (lines 83-122)
 ![code3](./images/screenshot_code83-122)
