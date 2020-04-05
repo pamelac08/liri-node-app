@@ -25,11 +25,11 @@ inquirer
         "concert-this",
         "spotify-this-song",
         "movie-this",
-        "do-what-it-says"
-      ]
-    }
+        "do-what-it-says",
+      ],
+    },
   ])
-  .then(function(answer) {
+  .then(function (answer) {
     var command = answer.command;
     var fullCommand = [];
 
@@ -44,10 +44,10 @@ inquirer
           {
             type: "input",
             name: "userInput",
-            message: "What would you like to search for?"
-          }
+            message: "What would you like to search for?",
+          },
         ])
-        .then(function(answer) {
+        .then(function (answer) {
           userInput = answer.userInput;
 
           if (userInput) {
@@ -88,7 +88,7 @@ inquirer
   });
 
 function log(text) {
-  fs.appendFile("log.txt", text, function(err) {
+  fs.appendFile("log.txt", text, function (err) {
     if (err) {
       console.log(err);
     }
@@ -102,10 +102,10 @@ function bandsInTown(artistName) {
         artistName +
         "/events?app_id=codingbootcamp"
     )
-    .then(function(response) {
+    .then(function (response) {
       bandsInTownResponse(response);
     })
-    .catch(function(error) {
+    .catch(function (error) {
       if (error.response) {
         console.log(error.response.data);
         console.log(error.response.status);
@@ -125,9 +125,7 @@ function bandsInTownResponse(y) {
     var venueCity = y.data[index].venue.city;
     var eventDateUnformatted = y.data[index].datetime;
     eventDateSplit = eventDateUnformatted.split("T");
-    eventDateFormat = "YYYY-MM-DD";
-    convertedDate = moment(eventDateSplit[0], eventDateFormat);
-    formattedDate = convertedDate.format("MM/DD/YYYY");
+    formattedDate = moment(eventDateSplit[0], "YYYY-MM-DD").format("L");
 
     console.log("Name of Venue:" + venueName);
     console.log("Venue Location:" + venueCity);
@@ -148,14 +146,14 @@ function bandsInTownResponse(y) {
 
 function spotiFy(song) {
   if (song) {
-    spotify.search({ type: "track", query: song }, function(err, data) {
+    spotify.search({ type: "track", query: song }, function (err, data) {
       if (err) {
         return console.log("Error occurred: " + err);
       }
       spotiFyResponse(data);
     });
   } else {
-    spotify.search({ type: "track", query: "The Sign" }, function(err, data) {
+    spotify.search({ type: "track", query: "The Sign" }, function (err, data) {
       if (err) {
         return console.log("Error occurred: " + err);
       }
@@ -196,10 +194,10 @@ function movie(movieInput) {
           movieInput +
           "&y=&plot=short&apikey=trilogy"
       )
-      .then(function(response) {
+      .then(function (response) {
         movieResponse(response);
       })
-      .catch(function(error) {
+      .catch(function (error) {
         if (error.response) {
           console.log(error.response.data);
           console.log(error.response.status);
@@ -218,10 +216,10 @@ function movie(movieInput) {
           "Mr. Nobody" +
           "&y=&plot=short&apikey=trilogy"
       )
-      .then(function(response) {
+      .then(function (response) {
         movieResponse(response);
       })
-      .catch(function(error) {
+      .catch(function (error) {
         if (error.response) {
           console.log(error.response.data);
           console.log(error.response.status);
@@ -279,7 +277,7 @@ function movieResponse(y) {
 }
 
 function random() {
-  fs.readFile("random.txt", "utf8", function(error, data) {
+  fs.readFile("random.txt", "utf8", function (error, data) {
     if (error) {
       return console.log(error);
     }

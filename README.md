@@ -1,5 +1,3 @@
-# liri-node-app
-
 ## LIRI Bot 
 Coding Bootcamp Homework #10: Introduction to Node.js
 
@@ -64,3 +62,11 @@ LIRI is a Language Interpretation and Recognition Interface that searches Spotif
     - Each command is contained in a function, with the response and output of each command is a separate function called inside
     - Plus a function for logging the correct data to the log.txt file
 
+
+
+
+![Gif-1](./gifs/liri_gif_1.gif)
+
+![Gif-2](./gifs/liri_gif_2.gif)
+
+![Gif-3](./gifs/liri_gif_3.gif)

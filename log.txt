@@ -1,3 +1,5 @@
+
+
 command line: do-what-it-says
 Response: 
     Artist(s) Name: Backstreet Boys
@@ -33,6 +35,10 @@ Response:
     Venue Location: Houston
     Event Date: 04/30/2020
 Response: 
+    Venue Name: American Airlines Center
+    Venue Location: Dallas
+    Event Date: 04/27/2020
+Response: 
     Venue Name: Pepsi Center
     Venue Location: Denver
     Event Date: 05/02/2020
@@ -43,7 +49,7 @@ Response:
 Response: 
     Venue Name: 3Arena
     Venue Location: Dublin
-    Event Date: 12/24/2020
+    Event Date: 03/05/2021
 Response: 
     Venue Name: M&S Bank Arena Liverpool
     Venue Location: Liverpool
@@ -57,48 +63,34 @@ Response:
     Venue Location: Leeds
     Event Date: 03/15/2021
 Response: 
-    Venue Name: Resorts World Arena
-    Venue Location: Birmingham
-    Event Date: 03/17/2021
-Response: 
-    Venue Name: Motorpoint Arena Nottingham
-    Venue Location: Nottingham
-    Event Date: 03/24/2021
-Response: 
-    Venue Name: The SSE Arena, Wembley
-    Venue Location: London
-    Event Date: 03/22/2021
-Response: 
-    Venue Name: Manchester Arena
-    Venue Location: Manchester
-    Event Date: 03/29/2021
-Response: 
-    Venue Name: Motorpoint Arena Cardiff
-    Venue Location: Cardiff
-    Event Date: 03/27/2021
-Response: 
     Venue Name: 3Arena
     Venue Location: Dublin
-    Event Date: 03/05/2021
+    Event Date: 12/24/2020
 Response: 
     Venue Name: The Guitar Hotel at Seminole Hard Rock
     Venue Location: Hollywood
     Event Date: 04/21/2020
 Response: 
-    Venue Name: American Airlines Center
-    Venue Location: Dallas
-    Event Date: 04/27/2020
+    Venue Name: Resorts World Arena
+    Venue Location: Birmingham
+    Event Date: 03/17/2021
 Response: 
-    Artist(s) Name: Ace of Base
-    Song Name: The Sign
-    Spotify Preview Link: https://p.scdn.co/mp3-preview/4c463359f67dd3546db7294d236dd0ae991882ff?cid=e5d66c9beafc4a73b732629eed34e211
-    From Album: The Sign
+    Venue Name: Royal Albert Hall
+    Venue Location: London
+    Event Date: 03/20/2021
 Response: 
-    Movie Title: Mr. Nobody
-    Year Released: 2009
-    IMDB Rating: 7.8
-    Rotten Tomatoes Rating: 67%
-    Country where Produced: Belgium, Germany, Canada, France, UK, Luxembourg
-    Language: English, Mohawk
-    Movie Plot: A boy stands on a station platform as a train is about to leave. Should he go with his mother or stay with his father? Infinite possibilities arise from this decision. As long as he doesn't choose, anything is possible.
-    Actors: Jared Leto, Sarah Polley, Diane Kruger, Linh Dan Pham
+    Venue Name: The SSE Arena, Wembley
+    Venue Location: London
+    Event Date: 03/22/2021
+Response: 
+    Venue Name: Motorpoint Arena Nottingham
+    Venue Location: Nottingham
+    Event Date: 03/24/2021
+Response: 
+    Venue Name: Motorpoint Arena Cardiff
+    Venue Location: Cardiff
+    Event Date: 03/27/2021
+Response: 
+    Venue Name: Manchester Arena
+    Venue Location: Manchester
+    Event Date: 03/29/2021
